@@ -1,27 +1,39 @@
+
+struct binOpC {
+   op: String,
+   left: Option<Box<EXCR3>>,
+   right: Option<Box<EXCR3>>
+}
+
+struct ifC {
+   test: Option<Box<EXCR3>>,
+   then: Option<Box<EXCR3>>,
+   els: Option<Box<EXCR3>>
+}
+
+struct appC {
+   fun: Option<Box<EXCR3>>,
+   args: Vec<Option<Box<EXCR3>>>
+}
+
+struct lamC {
+   body: Option<Box<EXCR3>>,
+   args: Vec<String>
+}
+
+struct EXCR3 {
+    numC: i32,
+    binOpC: Option<Box<binOpC>>,
+    boolC: bool,
+    ifC: Option<Box<ifC>>,
+    idC: String,
+    appC: Option<Box<appC>>,
+    lamC: Option<Box<lamC>>
+}
+
 fn main() {
-   let mut x = returns_an_int();
-}
-
-fn returns_an_int() {
-   4
-}
-
-#[test]
-fn this_tests_code() {
-   if returns_an_int() != 3 {
-      panic!("Fail!");
-   }
+   println!("Hello, world!");
 }
 
 
-/*
-fn div_by_three(num: int) -> bool {
-   true
-}
 
-#[test]
-fn test_div_by_three() {
-    if div_by_three(1) {
-        fail!("One is not three");
-    }
-}*/
