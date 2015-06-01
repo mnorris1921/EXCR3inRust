@@ -54,7 +54,7 @@ fn interp(e: EXCR3, env: Environment) -> Value {
    match e {
       EXCR3::numC {n} => return Value::numV {n: n},
       EXCR3::binOpC {op, left, right} => Value::tempV,
-      EXCR3::boolC {b} => Value::tempV,
+      EXCR3::boolC {b} => return Value::boolV {b: b},
       EXCR3::ifC {test, then, els} => Value::tempV,
       EXCR3::idC {id} => Value::tempV,
       EXCR3::appC {fun, args} => Value::tempV,
