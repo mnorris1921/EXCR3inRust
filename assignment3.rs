@@ -32,6 +32,21 @@ enum EXCR3 {
 }
 
 // Michael: nums, with
+// Varsha: bool, binop
+
+struct Binding {
+    name : String,
+    val: Option<Box<Value>>
+}
+struct Environment {
+   Env : Vec<Option<Box<Binding>>>
+}
+
+enum Value {
+    numV { n : i32},
+    boolV { b : bool},
+    closV { args :  Vec<String>, body : Option<Box<EXCR3>>, env : Option<Box<Environment>>}
+}
 
 fn main() {
    println!("Hello, world!");
