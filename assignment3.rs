@@ -93,6 +93,7 @@ fn interp(e: EXCR3) -> i32 {
 fn test_suite() {
    // Something weird with Rust comparing equality of structs, will figure out tomorrow...
    assert_eq!(interp(EXCR3::numC{n: 4}), 4);
+   assert_eq!(interp(EXCR3::binOpC{op: Operator::plus, left: (Box::new (EXCR3::numC{n: 4})), right: (Box::new (EXCR3::numC{n: 4}))}), 8);
    //assert_eq!(interp(EXCR3::binOpC{op: "+", left: EXCR3::numC{n: 2}, right: EXCR3::numC{n: 2}},
            //Environment{Env: Vec::new()}), 4);
 }
